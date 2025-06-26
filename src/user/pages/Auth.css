@@ -1,5 +1,5 @@
 .authentication__header {
-  color: #ffcc00; /* yellow title */
+  color: #ffcc00; /* brand yellow */
   text-align: center;
   font-size: 1.75rem;
   margin-bottom: 1rem;
@@ -14,9 +14,24 @@
   border-radius: 1rem;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
   text-align: center;
-  color: #ffffff; /* fallback text color */
+  color: #ffffff;
 }
 
 .authentication form {
   margin-bottom: 1rem;
+}
+
+.auth__switch-mode {
+  background: none;
+  border: none;
+  color: #ffcc00; /* match brand yellow */
+  text-decoration: underline;
+  cursor: pointer;
+  padding: 0;
+  font: inherit;
+  transition: color 0.2s;
+}
+
+.auth__switch-mode:hover {
+  color: #ffd633; /* lighter yellow on hover */
 }
