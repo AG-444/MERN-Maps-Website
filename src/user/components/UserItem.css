@@ -1,49 +1,97 @@
 .user-item {
-  margin: 1rem;
-  width: calc(45% - 2rem);
-  min-width: 17.5rem;
-}
-
-.user-item a {
-  display: flex;
-  align-items: center;
   width: 100%;
-  height: 100%;
-  text-decoration: none;
-  padding: 1rem;
-  color: white;
-  background: #292929;
-}
-
-.user-item a:hover,
-.user-item a:active {
-  background: #ffd900;
+  max-width: 50rem;
 }
 
 .user-item__content {
   padding: 0;
+  border-radius: 1.5rem;
+  overflow: hidden;
+  background: rgba(30, 30, 30, 0.85);
+  backdrop-filter: blur(6px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.user-item__link {
+  display: flex;
+  align-items: center;
+  padding: 1.5rem;
+  text-decoration: none;
+  color: inherit;
+  gap: 2rem;
 }
 
 .user-item__image {
-  width: 4rem;
-  height: 4rem;
-  margin-right: 1rem;
+  flex-shrink: 0;
+  width: 5rem;
+  height: 5rem;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 3px solid #f6c90e;
+  /* box-shadow: 0 0 0.5rem #f6c90e; */
+}
+
+.user-item__info {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  gap: 1.5rem;
 }
 
 .user-item__info h2 {
+  margin: 0;
   font-size: 1.5rem;
-  margin: 0 0 0.5rem 0;
-  font-weight: normal;
-  color: #ffd900;
-}
-
-.user-item:hover h2,
-.user-item:active h2,
-.user-item:hover h3,
-.user-item:active h3 {
-  color: #292929;
+  font-weight: 600;
+  color: #fff;
 }
 
 .user-item__info h3 {
   margin: 0;
+  margin-left: auto;
+  font-size: 1rem;
+  font-weight: 400;
+  color: #ccc;
+}
+
+@media (max-width: 768px) {
+  .user-item__link {
+    flex-direction: column;
+    text-align: center;
+    gap: 1rem;
+  }
+
+  .user-item__image {
+    width: 6rem;
+    height: 6rem;
+  }
+
+  .user-item__info {
+    flex-direction: column;
+    gap: 0.4rem;
+  }
+
+  .user-item__info h3 {
+    margin-left: 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .user-item__content {
+    border-radius: 1rem;
+    padding: 1rem;
+  }
+
+  .user-item__image {
+    width: 5rem;
+    height: 5rem;
+  }
+
+  .user-item__info h2 {
+    font-size: 1.2rem;
+  }
+
+  .user-item__info h3 {
+    font-size: 0.9rem;
+  }
 }

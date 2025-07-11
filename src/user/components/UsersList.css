@@ -2,9 +2,10 @@
   list-style: none;
   margin: 0 auto;
   padding: 0;
-  width: 90%;
-  max-width: 50rem;
+  width: 100%;
+  max-width: 60rem;
   display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
+  flex-direction: column;
+  gap: 1.5rem;
+  align-items: center;
 }

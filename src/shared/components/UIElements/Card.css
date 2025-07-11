@@ -1,9 +1,18 @@
 .card {
   position: relative;
-  margin: 0;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.26);
-  border-radius: 6px;
-  padding: 1rem;
+  margin: 1rem;
+  padding: 1.5rem;
+  border-radius: 1.5rem;
+  background: rgba(30, 30, 30, 0.85);
+  backdrop-filter: blur(6px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0.08);
   overflow: hidden;
-  background: white; 
+  color: #f1f1f1;
+  transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.card--hoverable:hover {
+  background: rgba(40, 40, 40, 0.9);
+  transform: translateY(-4px);
 }
