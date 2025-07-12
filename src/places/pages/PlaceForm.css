@@ -1,10 +1,66 @@
 .place-form {
-  list-style: none;
+  position: relative;
   margin: 0 auto;
-  padding: 1rem;
+  padding: 2rem;
   width: 90%;
   max-width: 40rem;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.26);
-  border-radius: 6px;
-  background: #292929;
+  background: #1e1e1e;
+  color: #f1f1f1;
+  border-radius: 1rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem; /* spacing between elements */
+}
+
+.place-form input,
+.place-form textarea {
+  width: 100%;
+}
+
+.image-upload {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 auto;
+  text-align: center;
+  gap: 0.5rem;
+}
+
+.image-upload__preview {
+  width: 250px;
+  height: 250px;
+  border-radius: 0.5rem;
+  border: 2px dashed #ccc;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #333;
+  color: #999;
+  font-size: 0.9rem;
+  overflow: hidden;
+}
+
+.image-upload__preview img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.image-upload input {
+  display: none;
+}
+
+.image-upload button {
+  background-color: #444;
+  color: #fff;
+  border: none;
+  padding: 0.6rem 1rem;
+  border-radius: 0.4rem;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.image-upload button:hover {
+  background-color: #666;
 }
