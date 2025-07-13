@@ -1,6 +1,6 @@
 import React, { useState, useContext } from 'react';
 
-import Card from '../../shared/components/UIElements/Card';
+import PlaceCard from './PlaceCard';
 import Button from '../../shared/components/FormElements/Button';
 import Modal from '../../shared/components/UIElements/Modal';
 import Map from '../../shared/components/UIElements/Map';
@@ -43,6 +43,23 @@ const PlaceItem = props => {
     } catch (err) {}
   };
 
+  // Compose the actions for the PlaceCard
+  const cardActions = (
+    <div className="place-card__actions">
+      <Button inverse onClick={openMapHandler}>
+        VIEW ON MAP
+      </Button>
+      {auth.userId === props.creatorId && (
+        <>
+          <Button to={`/places/${props.id}`}>EDIT</Button>
+          <Button danger onClick={showDeleteWarningHandler}>
+            DELETE
+          </Button>
+        </>
+      )}
+    </div>
+  );
+
   return (
     <React.Fragment>
       <ErrorModal error={error} onClear={clearError} />
@@ -80,34 +97,14 @@ const PlaceItem = props => {
         </p>
       </Modal>
       <li className="place-item">
-        <Card className="place-item__content">
+        <PlaceCard
+          image={`http://localhost:5000/${props.image}`}
+          title={props.title}
+          description={props.description}
+          actions={cardActions}
+        >
           {isLoading && <LoadingSpinner asOverlay />}
-          <div className="place-item__image">
-            <img
-              src={`http://localhost:5000/${props.image}`}
-              alt={props.title}
-            />
-          </div>
-          <div className="place-item__info">
-            <h2>{props.title}</h2>
-            <h3>{props.address}</h3>
-            <p>{props.description}</p>
-          </div>
-          <div className="place-item__actions">
-            <Button inverse onClick={openMapHandler}>
-              VIEW ON MAP
-            </Button>
-            {auth.userId === props.creatorId && (
-              <Button to={`/places/${props.id}`}>EDIT</Button>
-            )}
-
-            {auth.userId === props.creatorId && (
-              <Button danger onClick={showDeleteWarningHandler}>
-                DELETE
-              </Button>
-            )}
-          </div>
-        </Card>
+        </PlaceCard>
       </li>
     </React.Fragment>
   );

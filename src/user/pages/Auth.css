@@ -20,18 +20,20 @@
 .authentication form {
   margin-bottom: 1rem;
 }
-
-.auth__switch-mode {
+.auth__switch-button {
+  border: none !important;
   background: none;
-  border: none;
-  color: #ffcc00; /* match brand yellow */
+  color: #ffcc00;
   text-decoration: underline;
   cursor: pointer;
-  padding: 0;
-  font: inherit;
+  padding: 0.5rem 1rem;
+  font-weight: 500;
+  font-size: 1rem;
   transition: color 0.2s;
+  text-decoration: none;
+
 }
 
-.auth__switch-mode:hover {
-  color: #ffd633; /* lighter yellow on hover */
-}
+.auth__switch-button:hover {
+  color: #ffd633;
+} 

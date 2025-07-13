@@ -105,7 +105,7 @@ const Auth = () => {
       <ErrorModal error={error} onClear={clearError} />
       <Card className="authentication">
         {isLoading && <LoadingSpinner asOverlay />}
-        <h2>Login Required</h2>
+        <h2>{isLoginMode ? 'Login Required' : 'Register New User'}</h2>
         <hr />
         <form onSubmit={authSubmitHandler}>
           {!isLoginMode && (
@@ -146,12 +146,13 @@ const Auth = () => {
             onInput={inputHandler}
           />
           <Button type="submit" disabled={!formState.isValid}>
-            {isLoginMode ? 'LOGIN' : 'SIGNUP'}
+            {isLoginMode ? 'Login' : 'Sign Up'}
           </Button>
         </form>
-        <Button inverse onClick={switchModeHandler}>
-          SWITCH TO {isLoginMode ? 'SIGNUP' : 'LOGIN'}
-        </Button>
+        <button className="auth__switch-button" onClick={switchModeHandler}>
+          {isLoginMode ? 'New user? Sign Up here' : 'Already have an Account? Login Here'}
+        </button>
+
       </Card>
     </React.Fragment>
   );

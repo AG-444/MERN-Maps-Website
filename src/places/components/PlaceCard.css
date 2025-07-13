@@ -1,0 +1,201 @@
+.place-card {
+  display: flex;
+  flex-direction: row;
+  background: #18191a;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  padding: 0;
+  color: #fff;
+  min-height: 500px;
+  min-width: 1000px;
+  margin-bottom: 2rem;
+  border: 1.5px solid rgba(255, 255, 255, 0.16);
+  transition: box-shadow 0.4s ease, border 0.4s ease;
+}
+
+/* Glow on hover */
+.place-card:hover {
+  border: 1.5px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 0 0 12px rgba(255, 255, 255, 0.3);
+}
+
+/* Image section */
+.place-card__image {
+  flex: 3 0 0%;
+  width: 60%;
+  min-width: 220px;
+  background: #000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.place-card__image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Text/details section */
+.place-card__details {
+  flex: 2 0 0%;
+  width: 40%;
+  padding: 1.5rem 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.place-card__title {
+  margin: 0 0 0.5rem 0;
+  font-size: 1rem;
+  font-weight: 700;
+  color: #fff;
+}
+
+.place-card__description {
+  margin: 0 0 0.5rem 0; /* tighter spacing below description */
+  font-size: 0.8rem;
+  color: #d1d1d1;
+}
+
+/* Buttons */
+.place-card__actions {
+  margin-top: auto;
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.place-card__actions button,
+.place-card__actions a {
+  background: #242526;
+  color: #fff;
+  border: none;
+  padding: 0.5em 1.2em;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background 0.2s;
+  text-decoration: none;
+}
+
+.place-card__actions button:hover,
+.place-card__actions a:hover {
+  background: #444950;
+}
+
+.place-card.mobile {
+  flex-direction: column;
+  width: 90%;
+  margin: 2rem auto;
+}
+
+/* --------- Responsive Layout ----------- */
+@media (max-width: 768px) {
+  .place-card {
+    flex-direction: column;
+    width: 90%;
+    min-width: auto;
+    min-height: auto;
+    margin: 2rem auto;
+  }
+
+  .place-card__image {
+    order: 2;
+    width: 100%;
+    height: auto;
+    max-height: 300px;
+  }
+
+  .place-card__image img {
+    height: auto;
+    max-height: 300px;
+  }
+
+  .place-card__details {
+    order: 1;
+    width: 100%;
+    padding: 1.2rem;
+    text-align: center;
+  }
+
+  .place-card__actions {
+    display: none !important;
+  }
+
+  .dropdown-content .place-card__actions {
+    display: flex !important;
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+  }
+}
+
+
+/* Mobile dropdown container */
+.place-card__mobile-actions {
+  order: 3;
+  width: 100%;
+  text-align: center;
+  margin-top: 1rem;
+}
+
+/* Dropdown toggle button (darker and styled) */
+.dropdown-toggle {
+  background: #1a1a1c;
+  border: none;
+  color: #fff;
+  font-size: 1.5rem;
+  padding: 0.4em 0.9em;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.dropdown-toggle:hover {
+  background: #333438;
+}
+
+/* Dropdown content styles */
+.dropdown-content {
+  margin-top: 0.8rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  opacity: 0;
+  max-height: 0;
+  overflow: hidden;
+  transition: opacity 0.3s ease, max-height 0.3s ease;
+}
+
+.place-card__mobile-actions .dropdown-content.show {
+  opacity: 1;
+  max-height: 500px;
+}
+
+/* Ensure stacked mobile buttons look clean */
+.dropdown-content a,
+.dropdown-content button {
+  width: 80%;
+  margin: 0.3rem 0;
+  padding: 0.6rem 1rem;
+  font-size: 1rem;
+  background-color: #242526;
+  border: none;
+  border-radius: 5px;
+  color: #fff;
+  text-align: center;
+  cursor: pointer;
+  transition: background 0.2s;
+  text-decoration: none;
+}
+
+.dropdown-content a:hover,
+.dropdown-content button:hover {
+  background-color: #444950;
+}
