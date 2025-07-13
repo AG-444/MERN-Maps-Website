@@ -67,12 +67,14 @@ const App = () => {
       }}
     >
       <Router>
-        <MainNavigation />
-        <main>{routes}</main>
-        <br/>
-        <br/>
-        <br/>
-        <Footer/>
+        <div className="app-container">
+          <MainNavigation />
+          <main className="main-content">{routes}</main>
+          <br/>
+          <br/>
+          <br/>
+          <Footer />
+        </div>
       </Router>
     </AuthContext.Provider>
   );

@@ -14,7 +14,6 @@ const PlaceCard = ({ image, title, description, actions }) => {
     return () => window.removeEventListener('resize', handleResize);
   }, []);
 
-  // ✅ Close dropdown on outside click
   useEffect(() => {
     const handleClickOutside = (event) => {
       if (
