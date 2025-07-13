@@ -12,10 +12,11 @@
 
 .main-navigation__menu-btn span {
   display: block;
-  width: 3rem;
-  height: 2.5px;
-  background: white;
+  width: 2rem;
+  height: 1.5px;
+  background: #1b1b1b;
 }
+
 .main-navigation__title {
   font-size: 1.5rem;
   font-weight: bold;
@@ -47,7 +48,7 @@
 
 .main-navigation__title a {
   text-decoration: none;
-   color: #292929;
+  color: #292929;
 }
 
 .main-navigation__header-nav {
@@ -58,6 +59,7 @@
   height: 100%;
 }
 
+/* Responsive: show nav links on larger screens */
 @media (min-width: 768px) {
   .main-navigation__menu-btn {
     display: none;
@@ -65,5 +67,24 @@
 
   .main-navigation__header-nav {
     display: block;
+  }
+
+  .main-navigation__title {
+    margin: 0;
+  }
+}
+
+/* Center logo and text on small screens */
+@media (max-width: 767px) {
+  .main-navigation__title {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 2rem; /* Ensure space for menu button */
+  }
+
+  .main-navigation__logo-link {
+    justify-content: center;
   }
 }

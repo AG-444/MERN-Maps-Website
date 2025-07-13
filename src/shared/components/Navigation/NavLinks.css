@@ -27,34 +27,34 @@
 }
 
 .nav-links a {
-  border: 2px solid transparent;
-  color: #292929;
+  border: 2px solid rgba(255, 255, 255, 0.5);
+  color: white;
+  background-color: transparent;
   text-decoration: none;
   padding: 0.5rem 1rem;
   border-radius: 0.75rem;
-  background-color: rgba(255, 255, 255, 0.9);
   transition: all 0.3s ease;
 }
 
 .nav-links a:hover,
 .nav-links a:active {
   transform: scale(1.05);
-  border: 2px solid #ffcc00;
+  border-color: white;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
 }
 
 .nav-links a.active {
-  border: 2px solid #ffcc00;
   background-color: #ffcc00;
   color: #292929;
+  border-color: #ffcc00;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
 }
 
 .nav-links button {
   cursor: pointer;
-  border: 2px solid #292929;
-  color: #292929;
-  background: rgba(255, 255, 255, 0.9);
+  border: 2px solid white;
+  color: white;
+  background: transparent;
   padding: 0.5rem 1rem;
   font: inherit;
   border-radius: 0.75rem;
@@ -68,9 +68,12 @@
 .nav-links button:hover,
 .nav-links button:active {
   transform: scale(1.05);
+  background: #f8df00;
+  color: #292929;
+  border-color: #f8df00;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-  border: 2px solid #292929;
 }
+
 @media (min-width: 768px) {
   .nav-links {
     flex-direction: row;
@@ -80,39 +83,4 @@
   .nav-links li {
     margin: 0 0.75rem;
   }
-
-  .nav-links a {
-    color: white;
-    background-color: transparent;
-    border: 2px solid rgba(255, 255, 255, 0.5);
-  }
-
-  .nav-links a:hover,
-  .nav-links a:active {
-    transform: scale(1.05);
-    border-color: white; /* ✅ stays white */
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-  }
-
-  .nav-links a.active {
-    background-color: #ffcc00;
-    color: #292929;
-    border-color: #ffcc00;
-  }
-
-  .nav-links button {
-    border: 2px solid white;
-    color: white;
-    background: transparent;
-  }
-
-  .nav-links button:hover,
-  .nav-links button:active {
-    transform: scale(1.05);
-    background: #f8df00;
-    color: #292929;
-    border-color: #f8df00;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-  }
 }
-
