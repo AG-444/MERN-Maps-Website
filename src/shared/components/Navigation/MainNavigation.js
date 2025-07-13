@@ -6,7 +6,7 @@ import Navlinks from './NavLinks';
 import SideDrawer from './SideDrawer';
 import './MainNavigation.css';
 import Backdrop from '../UIElements/Backdrop';
-
+import logo from '../../../adi_1.png';
 const MainNavigation = props => {
   const [drawerIsOpen, setDrawerIsOpen] = useState(false);
 
@@ -34,6 +34,7 @@ const MainNavigation = props => {
           <span />
         </button>
         <h1 className="main-navigation__title">
+          <img src={logo} alt='logo'></img>
           <Link to="/">LenScape</Link>
         </h1>
         <nav className='main-navigation__header-nav'>
