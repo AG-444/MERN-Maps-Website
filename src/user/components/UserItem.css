@@ -42,7 +42,7 @@
 .user-item__info h2 {
   margin: 0;
   font-size: 1.5rem;
-  font-weight: 600;
+  font-weight: 150;
   color: #fff;
 }
 
@@ -50,7 +50,7 @@
   margin: 0;
   margin-left: auto;
   font-size: 1rem;
-  font-weight: 400;
+  font-weight: 300;
   color: #ccc;
 }
 

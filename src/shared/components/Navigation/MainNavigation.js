@@ -34,8 +34,10 @@ const MainNavigation = props => {
           <span />
         </button>
         <h1 className="main-navigation__title">
+          <Link to="/" className="main-navigation__logo-link">
           <img src={logo} alt='logo'></img>
-          <Link to="/">LenScape</Link>
+          <span className='main-navigation__logo-name'>LenScape</span>
+          </Link>
         </h1>
         <nav className='main-navigation__header-nav'>
           <Navlinks/>
