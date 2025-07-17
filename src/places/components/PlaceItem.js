@@ -47,13 +47,13 @@ const PlaceItem = props => {
   const cardActions = (
     <div className="place-card__actions">
       <Button inverse onClick={openMapHandler}>
-        VIEW ON MAP
+        View On Map
       </Button>
       {auth.userId === props.creatorId && (
         <>
-          <Button to={`/places/${props.id}`}>EDIT</Button>
+          <Button to={`/places/${props.id}`}>Edit</Button>
           <Button danger onClick={showDeleteWarningHandler}>
-            DELETE
+            Delete
           </Button>
         </>
       )}
@@ -83,10 +83,10 @@ const PlaceItem = props => {
         footer={
           <React.Fragment>
             <Button inverse onClick={cancelDeleteHandler}>
-              CANCEL
+              Cancel
             </Button>
             <Button danger onClick={confirmDeleteHandler}>
-              DELETE
+              Delete
             </Button>
           </React.Fragment>
         }
@@ -98,7 +98,7 @@ const PlaceItem = props => {
       </Modal>
       <li className="place-item">
         <PlaceCard
-          image={`${process.env.REACT_APP_BACKEND_URL}${props.image}`}
+          image={`${props.image}`}
           title={props.title}
           description={props.description}
           actions={cardActions}
